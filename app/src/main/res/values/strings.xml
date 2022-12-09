@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Final-Exam-DiceRoller</string>
+    <string name="Roll_1">roll1</string>
+    <string name="Roll_2">roll2</string>
+    <string name="sides">sides</string>
+</resources>
