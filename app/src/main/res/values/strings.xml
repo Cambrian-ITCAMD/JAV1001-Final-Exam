@@ -4,4 +4,10 @@
     <string name="roll2">Roll 2</string>
     <string name="sides">sides</string>
     <string name="add">Add</string>
+    <string name="d4">dice 4</string>
+    <string name="d6">dice 6</string>
+    <string name="d8">dice 8</string>
+    <string name="d10">dice 10</string>
+    <string name="d12">dice 12</string>
+    <string name="d20">dice 20</string>
 </resources>
