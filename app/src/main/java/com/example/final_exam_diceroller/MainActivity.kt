@@ -46,10 +46,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
         binding.add.setOnClickListener {
-            if (binding.sidesInput.text != null) {
+            if (!binding.sidesInput.text.isEmpty())
+            {
                 spinneradapter.add((binding.sidesInput.text.toString()).toInt())
                 binding.sidesInput.text.clear()
             }
+            else
+                Toast.makeText(this,"Please enter a value",Toast.LENGTH_SHORT).show()
+
         }
     }
 
