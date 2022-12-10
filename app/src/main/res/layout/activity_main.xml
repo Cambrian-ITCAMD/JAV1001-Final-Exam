@@ -10,7 +10,7 @@
         android:id="@+id/result1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="16dp"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="@+id/result2"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="@+id/result3"
         app:layout_constraintEnd_toStartOf="@+id/result3"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toEndOf="@+id/result1"
         app:layout_constraintTop_toTopOf="@+id/result3"
         app:layout_constraintVertical_bias="0.0" />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="16dp"
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,10 +45,10 @@
         android:layout_width="87dp"
         android:layout_height="46dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="44dp"
         android:text="@string/roll1"
         app:layout_constraintEnd_toStartOf="@+id/roll2"
-        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result1" />
 
@@ -56,43 +56,59 @@
         android:id="@+id/roll2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="80dp"
         android:text="@string/roll2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
+        android:id="@+id/sides_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/sides"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/add"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roll1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
         android:text="@string/add"
+        app:layout_constraintBottom_toTopOf="@+id/statement_textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roll2" />
+        app:layout_constraintTop_toBottomOf="@+id/roll2"
+        app:layout_constraintVertical_bias="0.036" />
 
     <Spinner
         android:id="@+id/sides_spinner"
         android:layout_width="352dp"
         android:layout_height="25dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="304dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/statement_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Please choose the sides for the dice to be rolled"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/sides_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/sides_input"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

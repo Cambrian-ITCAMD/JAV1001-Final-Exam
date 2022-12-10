@@ -2,7 +2,7 @@
     <string name="app_name">Final-Exam-DiceRoller</string>
     <string name="roll1">Roll 1</string>
     <string name="roll2">Roll 2</string>
-    <string name="sides">sides</string>
+    <string name="sides">number of sides</string>
     <string name="add">Add</string>
     <string name="d4">dice 4</string>
     <string name="d6">dice 6</string>
