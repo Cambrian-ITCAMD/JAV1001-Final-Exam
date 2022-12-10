@@ -8,29 +8,35 @@
 
     <TextView
         android:id="@+id/result1"
-        android:layout_width="108dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="@+id/result2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/result2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/result2"
-        android:layout_width="104dp"
-        android:layout_height="81dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="@+id/result3"
         app:layout_constraintEnd_toStartOf="@+id/result3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toEndOf="@+id/result1"
+        app:layout_constraintTop_toTopOf="@+id/result3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/result3"
-        android:layout_width="98dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="72dp"
+        android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
