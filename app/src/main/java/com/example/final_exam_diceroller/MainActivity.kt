@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
     var dice = Dice(4)
     var value = 0
+    var sides = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         setContentView(binding.root)
         val sharedPref = getSharedPreferences("save", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
+        val listViewadapter = ArrayAdapter<Int>(this, android.R.layout.simple_list_item_1)
 
 
         val spinneradapter = ArrayAdapter<Int>(this, android.R.layout.simple_spinner_item)
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         spinneradapter.add(10)
         spinneradapter.add(12)
         spinneradapter.add(20)
+
 
         binding.sidesSpinner.adapter = spinneradapter
 
@@ -50,18 +54,24 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         binding.add.setOnClickListener {
             if (!binding.sidesInput.text.isEmpty())
-            {
-                val sides = (binding.sidesInput.text.toString()).toInt()
-                editor.apply {
-                    putInt("dice", sides)
-                    apply()
+                {
+                    sides = (binding.sidesInput.text.toString()).toInt()
+                    editor.apply {
+                        putInt("dice", sides)
+                        apply()
+                    }
+                    spinneradapter.add(sharedPref.getInt("dice", 0))
+                    listViewadapter.add(sharedPref.getInt("dice", 0))
+                    binding.historyList.adapter = listViewadapter
+                    binding.sidesInput.text.clear()
                 }
-                spinneradapter.add(sharedPref.getInt("dice",0))
-                binding.sidesInput.text.clear()
-            }
-            else
-                Toast.makeText(this,"Please enter a value",Toast.LENGTH_SHORT).show()
+
+           else
+                Toast.makeText(this, "Please enter a value", Toast.LENGTH_SHORT).show()
         }
+
+
+
 
     }
 

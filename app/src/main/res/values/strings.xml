@@ -10,4 +10,6 @@
     <string name="d10">dice 10</string>
     <string name="d12">dice 12</string>
     <string name="d20">dice 20</string>
+    <string name="save">Save</string>
+    <string name="history">History</string>
 </resources>
