@@ -1,5 +1,6 @@
 package com.example.final_exam_diceroller
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val sharedPref = getSharedPreferences("save", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
 
 
         val spinneradapter = ArrayAdapter<Int>(this, android.R.layout.simple_spinner_item)
@@ -48,13 +51,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding.add.setOnClickListener {
             if (!binding.sidesInput.text.isEmpty())
             {
-                spinneradapter.add((binding.sidesInput.text.toString()).toInt())
+                val sides = (binding.sidesInput.text.toString()).toInt()
+                editor.apply {
+                    putInt("dice", sides)
+                    apply()
+                }
+                spinneradapter.add(sharedPref.getInt("dice",0))
                 binding.sidesInput.text.clear()
             }
             else
                 Toast.makeText(this,"Please enter a value",Toast.LENGTH_SHORT).show()
-
         }
+
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
