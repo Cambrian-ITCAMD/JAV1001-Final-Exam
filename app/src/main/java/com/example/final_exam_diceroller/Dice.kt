@@ -12,6 +12,6 @@ class Dice (private val numSides: Int, private var sideUp:Int = 0) {
 
     fun roll() //Roll method to generate a random value
     {
-        sideUp = ((Math.random() * numSides) + 1).toInt()
+        sideUp = (1..numSides).random()
     }
 }
