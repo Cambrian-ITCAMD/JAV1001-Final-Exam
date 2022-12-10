@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
       var position = binding.sidesSpinner.getPositionForView(p1)
         value = binding.sidesSpinner.getItemAtPosition(position).toString().toInt()
                    dice = Dice(value)
-                }
+    }
 
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
